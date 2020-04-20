@@ -202,20 +202,56 @@
       <h1>Add New Habit</h1>
     <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
         <div class="form-group">
-            <label for="Name">Habit Name</label>
+            <label for="Name">Habit Name:</label>
             <input type="name" class="form-control" id="name" placeholder="ie. Drinking Water">
         </div>
         <div class="form-group">
             <label for="comment">Notes about habit:</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
             <div class="form-group">
-                <label for="Name"> Date Start</label>
+                <label for="Name"> Date Start:</label>
                 <input type="date" class="form-control" id="start" placeholder="ie. 01/01/2020">
             </div>
             <div class="form-group">
-                <label for="Name"> Date End</label>
+                <label for="Name"> Date End:</label>
                 <input type="date" class="form-control" id="end" placeholder="ie. 01/01/2020">
             </div>
+            <div class="form-group">
+              <label for="Name"> Everyday I want to start this habit by:</label>
+              <input type="time" class="form-control" id="timeStart" placeholder="ie. 01/01/2020">
+            </div>
+            <div class="form-group">
+              <label for="Name"> Everyday I want to end this habit by:</label>
+              <input type="time" class="form-control" id="timeEnd" placeholder="ie. 01/01/2020">
+            </div>
+
+            <div class="container">
+              <label>Which days of the week do you want to make sure you keep this habit?</label>
+              <form>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Sunday"> Sun
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Monday"> Mon
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Tuesday"> Tues
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Wednesday"> Wed
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Thursday"> Thur
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Friday"> Fri
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="Saturday"> Sat
+                </label>
+              </form>
+            </div>
+          </div>
 
             <div class="row">
                 <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
