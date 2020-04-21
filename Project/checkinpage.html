@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+  <html>
+    <head >
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://   maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+      
+      <title>Daily Check in</title>
+
+
+
+      <style>
+        /* Nav Bar style*/
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:rgba(182,221,255,0.75);
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color:rgba(182,221,255,0.75);
+        }
+
+        .active {
+          background-color: rgba(182,221,255,0.75);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          /* width: 50%; */
+        }
+
+        .btn-info{
+          font-family: Raleway-SemiBold;
+          font-size: 30px;
+          color: rgba(182,221,255,0.75);
+          letter-spacing: 1px;
+          line-height: 15px;
+          border: 2px solid rgba(182,221,255,0.75);;
+          border-radius: 40px;
+          background: transparent;
+          transition: all 0.3s ease 0s;
+        }
+
+        .btn-info:hover {
+          color: #FFF;
+          background: rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);
+        }
+
+        .card-text{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .card-title{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+
+    
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 1em auto;
+        border-radius: 1.5em;
+        /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: rgb(134, 178, 218);
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .sign2 {
+        padding-top: 40px;
+        color: rgb(134, 178, 218);
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: rgba(182,221,255,0.75);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        text-decoration: none
+    }
+      </style>
+
+<script>
+  function toggleText() {
+  var text = document.getElementById("demo");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+  }
+</script>
+
+    </head>
+    <body style="font-family: century gothic; font-size: 11;">
+      <div class="center">
+        <img id="logo-main" src="daily_checkIn.jpg" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">   
+
+          <div class="main">
+            <!-- printing date -->
+            <p class="sign" align="center" id="dem"></p>
+                <script>
+                var d = new Date();
+                document.getElementById("dem").innerHTML = d.toDateString();
+                </script>
+            <p class="sign" align="center">Streaks</p>
+
+
+            <div class="row">
+              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
+              <button type='button' class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 1</button>
+            </div>
+            <br>
+            <div class="row">
+              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
+              <button type='button' class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 2</button>
+            </div>
+            <br>
+
+            <div class="row">
+              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
+              <button type='button' class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 3</button>
+            </div>
+            
+            
+
+          </div>
+  
+
+      <div class="container">
+        <h2 class="sign" align="center">Month</h2>
+        <table class="table">
+          <tdbody>
+            <tr>
+              <td>Jan</td>
+              <td>Feb</td>
+              <td>Mar</td>
+              <td>Apr</td>
+              <td>May</td>
+              <td>Jun</td>
+              <td>Jul</td>
+              <td>Aug</td>
+              <td>Sept</td>
+              <td>Oct</td>
+              <td>Nov</td>
+              <td>Dec</td>
+
+        <table class="table table-bordered table-responsive table-hover" class="sign">
+          <tbody >
+            <tr>
+              <td>habit</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+
+
+            </tr>
+            <tr>
+              <td>Habit1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <td>Habit2</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+          
+          <script>
+          // Add the following code if you want the name of the file appear on select
+          $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+          });
+          </script>
+
+          
+          
+     </div>
+
+    
+    </body>
+
+    </html>
