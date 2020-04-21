@@ -15,37 +15,12 @@
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       
-      
-      <title>Happy Home</title>
+      <script type="text/javascript" src="./login.js"></script>
 
-      <script>
-        function deleteA(divID){
-          console.log("Hi");
-          document.getElementById(divID).remove();
-        }
-        function addCard(){
-          var A = Math.random().toString(36).substring(2,10);
-          var tweet1 = $('<div class="card" id="'+A+'" style="margin-bottom:5px; height: 50px"> <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteA("'+A+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
-          tweet1.appendTo(document.getElementById("Interest_1"));
-        }
-        function addCard2(){
-          var B = Math.random().toString(36).substring(2,10);
-          var tweet2 = $('<div class="card" id="'+B+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+B+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
-          tweet2.appendTo(document.getElementById("Interest_2"));
-        }
-        function deleteB(divID){
-          document.getElementById(divID).remove();
-        }
-        function addCard3(){
-          var C = Math.random().toString(36).substring(2,10);
-          var tweet3 = $('<div class="card" id="'+C+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+C+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
-          tweet3.appendTo(document.getElementById("Interest_3"));
-        }
-
-      </script>
-
-
+      <title>New Habit</title>
       <style>
+      
+        /* Nav Bar */
         ul {
           list-style-type: none;
           margin: 0;
@@ -90,7 +65,7 @@
           color: rgba(182,221,255,0.75);
           letter-spacing: 1px;
           line-height: 15px;
-          border: 2px solid rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);;
           border-radius: 40px;
           background: transparent;
           transition: all 0.3s ease 0s;
@@ -116,15 +91,110 @@
           height: auto;
         }
 
-                
+    
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 1em auto;
+        border-radius: 1.5em;
+        /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: rgb(134, 178, 218);
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: rgba(182,221,255,0.75);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        text-decoration: none
+    }
+       
       </style>
       
       <ul>
         <li><a class="active" href="happyHome.html">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign Up!</a></li>
+        <li><a href="#myModal" data-toggle="modal" onclick="openModal()">Login</a></li>
+        <li><a href="#myModal2"  data-toggle="modal" onclick="openModal()">Sign Up</a></li>
       </ul>
+
     </head>
       <body style="font-family: century gothic; font-size: 11;">
         <div class="center">
@@ -176,5 +246,48 @@
                       <div class="panel-body">This is an app that is aimed to help individuals build good habits and release bad habits. Use this app as a tracker to keep track of day-to-day progress on personal habits. If you want to see how you have grown, check out your monthly progress in the calendar app. Not everyone has the same habits. Add your own custom habits to make sure the app is personalized for you.</div>
                     </div>
       
-      	</body>
+        </body>
+        
+            <!-- HTML CODE FOR LOGIN -->
+
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="main">
+            <p class="sign" align="center">Login</p>
+            <form class="form1">
+              <input class="un " type="text" align="center" placeholder="Username">
+              <input class="pass" type="password" align="center" placeholder="Password">
+              <a class="submit" type = "button" href = "#" onclick = "" align="center">Sign in</a>
+              <p class="forgot" align="center"><a href="#">Forgot Password?</p>        
+            </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+
+    <!-- HTML CODE FOR SIGN IN -->
+
+    <div id="myModal2" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <p class="sign" align="center">Sign Up</p>
+          <div class="modal-body">
+              <input type="text" id="name" class="un" name="firstName" placeholder="First Name"
+                required=/"required">
+              <input type="text" id="lastName"class="un" name="lastName" placeholder="Last Name"
+                required="required">
+              <input type="email" id="email" class="un" name="E-Mail" placeholder="E-Mail"
+                required="required">
+              <input id="psw" id="pass" type="password" class="pass" name="password" placeholder="Password"
+                required="required">
+              <input id="cpsw" id="pass"type="password" class="pass" name="confirm password"
+                placeholder="Confirm Password" required="required">
+              <button id="my_submit_button" class="submit" disabled
+                onClick="onClickFunction()">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
     </html>

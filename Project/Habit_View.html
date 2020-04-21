@@ -1,5 +1,3 @@
-
-  
 <!DOCTYPE html>
   <html>
     <head	>
@@ -17,7 +15,8 @@
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       
-      
+      <script type="text/javascript" src="./login.js"></script>
+
       <title>New Habit</title>
       <style>
       
@@ -64,14 +63,12 @@
           font-family: Raleway-SemiBold;
           font-size: 13px;
           color: rgba(182,221,255,0.75);
-          letter-spacing: 0.5px;
+          letter-spacing: 1px;
           line-height: 15px;
           border: 2px solid rgba(182,221,255,0.75);;
           border-radius: 40px;
           background: transparent;
           transition: all 0.3s ease 0s;
-          padding-left: auto;
-          padding-right: auto;
         }
 
         .btn-info:hover {
@@ -105,8 +102,9 @@
     }
     
     .sign {
-        padding-top: 15px;
+        padding-top: 40px;
         color: rgb(134, 178, 218);
+        font-weight: bold;
         font-size: 23px;
     }
     
@@ -187,10 +185,15 @@
         color:rgba(182,221,255,0.75);
         text-decoration: none
     }
-    
-
-                
+       
       </style>
+      
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#myModal" data-toggle="modal" onclick="openModal()">Login</a></li>
+        <li><a href="#myModal2"  data-toggle="modal" onclick="openModal()">Sign Up</a></li>
+      </ul>
 
 <script>
   function toggleText() {
@@ -202,13 +205,6 @@
   }
   }
 </script>
-
-<ul>
-  <li><a class="active" href="happyHome.html">Home</a></li>
-  <li><a href="#">About Us</a></li>
-  <li><a href="#">Login</a></li>
-  <li><a href="#">Sign Up!</a></li>
-</ul>
 
     </head>
     <body style="font-family: century gothic; font-size: 20; color: rgb(102, 145, 185); ">
@@ -392,23 +388,53 @@
           </tbody>
         </table>
       </div>
-
-
-          
-          <script>
-          // Add the following code if you want the name of the file appear on select
-          $(".custom-file-input").on("change", function() {
-            var fileName = $(this).val().split("\\").pop();
-            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-          });
-          </script>
-
-          
-          
      </div>
 
     
     </body>
+
+                <!-- HTML CODE FOR LOGIN -->
+
+                <div id="myModal" class="modal fade">
+                  <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                      <div class="main">
+                        <p class="sign" align="center">Login</p>
+                        <form class="form1">
+                          <input class="un " type="text" align="center" placeholder="Username">
+                          <input class="pass" type="password" align="center" placeholder="Password">
+                          <a class="submit" type = "button" href = "#" onclick = "" align="center">Sign in</a>
+                          <p class="forgot" align="center"><a href="#">Forgot Password?</p>        
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <br /><br /><br />
+            
+                <!-- HTML CODE FOR SIGN IN -->
+            
+                <div id="myModal2" class="modal fade">
+                  <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                      <p class="sign" align="center">Sign Up</p>
+                      <div class="modal-body">
+                          <input type="text" id="name" class="un" name="firstName" placeholder="First Name"
+                            required=/"required">
+                          <input type="text" id="lastName"class="un" name="lastName" placeholder="Last Name"
+                            required="required">
+                          <input type="email" id="email" class="un" name="E-Mail" placeholder="E-Mail"
+                            required="required">
+                          <input id="psw" id="pass" type="password" class="pass" name="password" placeholder="Password"
+                            required="required">
+                          <input id="cpsw" id="pass"type="password" class="pass" name="confirm password"
+                            placeholder="Confirm Password" required="required">
+                          <button id="my_submit_button" class="submit" disabled
+                            onClick="onClickFunction()">Sign Up</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br /><br /><br />
 
     </html>
 
