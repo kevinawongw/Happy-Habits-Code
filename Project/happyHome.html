@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+  <html>
+    <head	>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://		maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+      
+      <title>Happy Home</title>
+
+      <script>
+        function deleteA(divID){
+          console.log("Hi");
+          document.getElementById(divID).remove();
+        }
+        function addCard(){
+          var A = Math.random().toString(36).substring(2,10);
+          var tweet1 = $('<div class="card" id="'+A+'" style="margin-bottom:5px; height: 50px"> <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteA("'+A+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet1.appendTo(document.getElementById("Interest_1"));
+        }
+        function addCard2(){
+          var B = Math.random().toString(36).substring(2,10);
+          var tweet2 = $('<div class="card" id="'+B+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+B+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet2.appendTo(document.getElementById("Interest_2"));
+        }
+        function deleteB(divID){
+          document.getElementById(divID).remove();
+        }
+        function addCard3(){
+          var C = Math.random().toString(36).substring(2,10);
+          var tweet3 = $('<div class="card" id="'+C+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+C+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet3.appendTo(document.getElementById("Interest_3"));
+        }
+
+      </script>
+
+
+      <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:rgba(182,221,255,0.75);
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color:rgba(182,221,255,0.75);
+        }
+
+        .active {
+          background-color: rgba(182,221,255,0.75);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          /* width: 50%; */
+        }
+
+        .btn-info{
+          font-family: Raleway-SemiBold;
+          font-size: 13px;
+          color: rgba(182,221,255,0.75);
+          letter-spacing: 1px;
+          line-height: 15px;
+          border: 2px solid rgba(182,221,255,0.75);
+          border-radius: 40px;
+          background: transparent;
+          transition: all 0.3s ease 0s;
+        }
+
+        .btn-info:hover {
+          color: #FFF;
+          background: rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);
+        }
+
+        .card-text{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .card-title{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+
+                
+      </style>
+      
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up!</a></li>
+      </ul>
+    </head>
+      <body style="font-family: century gothic; font-size: 11;">
+        <div class="center">
+        <img id="logo-main" src="happyHabits.jpg" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">            
+          <h3> <center>&#9720;Menu: &#9721; </center></h3>
+
+          <div class="row">
+         <!-- <a type="button" class="btn btn-info" href="form.html" style="margin-bottom: 2mm;">Add New Interest</a>
+            </div> -->
+         <!-- <a type="button" class="btn btn-info" href="https://github.com/kevinawongw" style=margin-left:25px;>See Cakes</a> -->
+
+            <div class="container-fluid">
+              <div class="row" style="margin-left: 20px;">
+                <div class="card-deck">
+                  <div class="card" id = "Interest_1">
+                    <img class="card-img-top" src="checkin.jpg" alt="Cake">
+                    <div class="card-block">
+                      <h4 class="card-title">Daily Check In: </h4>
+                      <p class="card-text">Check in with the app with details of your habits for the day!</p>
+                      <div>
+                        <a type="button" class="btn btn-info" style="margin-left:55px; margin-bottom: 10px;" onclick="#">Check In</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" id = "Interest_2">
+                    <img class="card-img-top" src="calendar.jpg" alt="Isabelle">
+                    <div class="card-block">
+                      <h4 class="card-title">View My Habits: </h4>
+                      <p class="card-text">Check out the calendar to see how you've been doing wih your habits everyday!</p>
+                      <div>
+                        <a type="button" class="btn btn-info" style="margin-left:55px; margin-bottom: 10px;" href="Habit_View.html">View Habits</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" id = "Interest_3">
+                    <img class="card-img-top" src="custom.JPG" alt="Journal">
+                    <div class="card-block">
+                      <h4 class="card-title">Customize Habits: </h4>
+                      <p class="card-text">Write your own custom habits to keep track of the ones that are specific to you!</p>
+                      <div>
+                        <a type="button" class="btn btn-info" style="margin-left:55px; margin-bottom: 10px;" href="form.html">Add/Customize</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container" style="margin-top: 10px;">
+                    <div class="panel panel-info">
+                      <div class="panel-heading"> <center>&#9720;Welcome to Happy Habits:&#9721; </center></div>
+                      <div class="panel-body">This is an app that is aimed to help individuals build good habits and release bad habits. Use this app as a tracker to keep track of day-to-day progress on personal habits. If you want to see how you have grown, check out your monthly progress in the calendar app. Not everyone has the same habits. Add your own custom habits to make sure the app is personalized for you.</div>
+                    </div>
+      
+      	</body>
+    </html>
