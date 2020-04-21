@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+  <html>
+    <head	>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://		maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- <script src="https://jakubroztocil.github.io/rrule/dist/es5/rrule.min.js"></script> -->
+
+
+      <title>About Me</title>
+      <style>
+
+        /* Nav Bar */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:rgba(182,221,255,0.75);
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color:rgba(182,221,255,0.75);
+        }
+
+        .active {
+          background-color: rgba(182,221,255,0.75);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          /* width: 50%; */
+        }
+
+        .btn-info{
+          font-family: Raleway-SemiBold;
+          font-size: 13px;
+          color: rgba(182,221,255,0.75);
+          letter-spacing: 1px;
+          line-height: 15px;
+          border: 2px solid rgba(182,221,255,0.75);;
+          border-radius: 40px;
+          background: transparent;
+          transition: all 0.3s ease 0s;
+        }
+
+        .btn-info:hover {
+          color: #FFF;
+          background: rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);
+        }
+
+        .card-text{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .card-title{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+
+
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 1em auto;
+        border-radius: 1.5em;
+        /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
+    }
+
+    .sign {
+        padding-top: 40px;
+        color: rgb(134, 178, 218);
+        font-weight: bold;
+        font-size: 23px;
+    }
+
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+    form.form1 {
+        padding-top: 40px;
+    }
+
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+    }
+
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: rgba(182,221,255,0.75);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        padding-top: 15px;
+    }
+
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color:rgba(182,221,255,0.75);
+        text-decoration: none
+    }
+
+
+
+      </style>
+
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up!</a></li>
+      </ul>
+
+    </head>
+    <body style="font-family: century gothic; font-size: 11;">
+      <div class = "content" id = "eventCreated"></div>
+    <!-- Interest -->
+      <h1>Add New Habit</h1>
+    <div class="form-group addeventatc" style="margin-left: 10%; margin-right: 10%;">
+        <div class="form-group">
+            <label for="Name">Habit Name:</label>
+            <input type="name" class="form-control title" id="name" placeholder="ie. Drinking Water">
+        </div>
+        <div class="form-group">
+            <label for="comment">Notes about habit:</label>
+            <textarea class="form-control description" rows="5" id="comment"></textarea>
+            <div class="form-group">
+                <label for="Name"> Date Start:</label>
+                <input type="date" class="form-control" id="start" placeholder="ie. 01/01/2020">
+            </div>
+            <div class="form-group">
+                <label for="Name"> Date End:</label>
+                <input type="date" class="form-control" id="end" placeholder="ie. 01/01/2020">
+            </div>
+            <div class="form-group">
+              <label for="Name"> Everyday I want to start this habit by:</label>
+              <input type="time" class="form-control" id="timeStart" placeholder="ie. 01/01/2020">
+            </div>
+            <div class="form-group">
+              <label for="Name"> Everyday I want to end this habit by:</label>
+              <input type="time" class="form-control" id="timeEnd" placeholder="ie. 01/01/2020">
+            </div>
+
+            <div class="container" id = "dayOWeek">
+              <label>Which days of the week do you want to make sure you keep this habit?</label>
+              <form>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="SU"> Sun
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="MO"> Mon
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="TU"> Tues
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="WE"> Wed
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="TH"> Thur
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="FR"> Fri
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="", id ="SA"> Sat
+                </label>
+              </form>
+            </div>
+          </div>
+
+            <div class="row">
+                <a type="button" class="btn btn-info" id = "eventSubmit" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
+            </div>
+
+
+          <div>
+         <br>
+          <label>Log in to save your changes:</label>
+        </div>
+        </div>
+          <div class="main">
+            <p class="sign" align="center">Sign in</p>
+            <form class="form1">
+              <input class="un " type="text" align="center" placeholder="Username">
+              <input class="pass" type="password" align="center" placeholder="Password">
+              <a class="submit" align="center">Sign in</a>
+              <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+
+
+            </div>
+
+
+          </div>
+
+          <script>
+          // Add the following code if you want the name of the file appear on select
+          $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+          });
+          </script>
+
+
+
+     </div>
+
+     <script src = index.js></script>
+     <script async defer src="https://apis.google.com/js/api.js"
+             onload="this.onload=function(){};handleClientLoad()"
+             onreadystatechange="if (this.readyState === 'complete') this.onload()">
+     </script>
+
+    </body>
+
+    </html>
