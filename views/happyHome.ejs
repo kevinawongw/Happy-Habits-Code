@@ -120,7 +120,7 @@
       </style>
       
       <ul>
-        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a class="active" href="happyHome.ejs">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Login</a></li>
         <li><a href="#">Sign Up!</a></li>
@@ -128,19 +128,19 @@
     </head>
       <body style="font-family: century gothic; font-size: 11;">
         <div class="center">
-        <img id="logo-main" src="happyHabits.jpg" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">            
+        <img id="logo-main" src="happyHabits.JPG" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">            
           <h3> <center>&#9720;Menu: &#9721; </center></h3>
 
           <div class="row">
          <!-- <a type="button" class="btn btn-info" href="form.html" style="margin-bottom: 2mm;">Add New Interest</a>
             </div> -->
          <!-- <a type="button" class="btn btn-info" href="https://github.com/kevinawongw" style=margin-left:25px;>See Cakes</a> -->
-
+		<% console.log(data); %>
             <div class="container-fluid">
               <div class="row" style="margin-left: 20px;">
                 <div class="card-deck">
                   <div class="card" id = "Interest_1">
-                    <img class="card-img-top" src="checkin.jpg" alt="Cake">
+                    <img class="card-img-top" src="checkin.JPG" alt="Cake">
                     <div class="card-block">
                       <h4 class="card-title">Daily Check In: </h4>
                       <p class="card-text">Check in with the app with details of your habits for the day!</p>
@@ -150,7 +150,7 @@
                     </div>
                   </div>
                   <div class="card" id = "Interest_2">
-                    <img class="card-img-top" src="calendar.jpg" alt="Isabelle">
+                    <img class="card-img-top" src="calendar.JPG" alt="Isabelle">
                     <div class="card-block">
                       <h4 class="card-title">Calendar View: </h4>
                       <p class="card-text">Check out the calendar to see how you've been doing wih your habits everyday!</p>
