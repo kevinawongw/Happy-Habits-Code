@@ -61,8 +61,7 @@ app.get('/test', function(req, res) {
             response.render('happyHome', {
                 title: 'Home Page',
                 data: '',
-                color: '',
-                color_msg: ''
+                
             })
         })
 
