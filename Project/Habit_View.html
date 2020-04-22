@@ -59,6 +59,7 @@
           /* width: 50%; */
         }
 
+        /* lil blue buttons info - months */
         .btn-info{
           font-family: Raleway-SemiBold;
           font-size: 13px;
@@ -108,55 +109,6 @@
         font-size: 23px;
     }
     
-    .un {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-    }
-    
-    form.form1 {
-        padding-top: 40px;
-    }
-    
-    .pass {
-            width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-    }
-    
-   
-    .un:focus, .pass:focus {
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
-    }
     
     .submit {
       cursor: pointer;
@@ -173,19 +125,83 @@
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
-    
-    .forgot {
-        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        color:rgba(182,221,255,0.75);
-        padding-top: 15px;
-    }
-    
-    a {
-        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        color:rgba(182,221,255,0.75);
-        text-decoration: none
-    }
-       
+
+
+  /* buttons */
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+.button1 {border-radius: 8px;}
+.button2 {border-radius: 8px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 8px;}
+.button5 {border-radius: 8px;}
+
+
+
       </style>
       
       <ul>
@@ -200,40 +216,58 @@
   var text = document.getElementById("demo");
   if (text.style.display === "none") {
     text.style.display = "block";
-  } else {
+  } 
+  else {
     text.style.display = "none";
   }
   }
 </script>
 
+
+
     </head>
     <body style="font-family: century gothic; font-size: 20; color: rgb(102, 145, 185); ">
-      <!-- <h1>View Streaks and Calendar</h1> -->
-      
+   
+      <!-- logo -->
       <div class="center">
         <img id="logo-main" src="daily_checkIn.jpg" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">
 
             <p class = "sign" align="center" id="date" style="font-family: century gothic"> </p>
+
+                <!-- Displays current date -->
                 <script>
                 var d = new Date();
                 document.getElementById("date").innerHTML = d.toDateString();
                 </script>
+
             <p class="sign" align="center" style="font-family: century gothic">Streaks</p>
 
 
-
-            
             <div class="container-fluid" align = "center">
-              <div class="column" style="margin-left: 20px;">
-              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
-              <button type='button' align="center" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 1</button>
-            <br>
-              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
-              <button type='button' class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 2</button>
-            <br>
-              <p id='demo' class="forgot" href="#" style='display: none'>Streak: x days</p>     
-              <button type='button' class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)" onclick="toggleText()">Habit 3</button>
-            </div>
+                <!-- new buttons -->
+                <p id='demo' href="#" style='display: none'>Streak: x days</p>
+                <button class="button button1" onclick="toggleText()">Habit 1</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: y days</p>
+                <button class="button button2" onclick="toggleText()">Habit 2</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: z days</p>
+                <button class="button button3" onclick="toggleText()">Habit 3</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: a days</p>
+                <button class="button button4" onclick="toggleText()">Habit 4</button>
+                <br>
+
+                <p id='demo' href="#" style='display: none'>Streak: b days</p>
+                <button class="button button5" onclick="toggleText()">Habit 5</button>
+                <br>
+                <!-- new buttons -->
+
+
+
           </div>
             
 
@@ -390,7 +424,7 @@
       </div>
      </div>
 
-    
+    <script src="script2.js"></script>
     </body>
 
                 <!-- HTML CODE FOR LOGIN -->
