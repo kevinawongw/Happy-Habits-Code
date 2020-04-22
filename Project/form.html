@@ -14,19 +14,11 @@
 
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-      <script type="text/javascript" src="./login.js"></script>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-
       
-      <!-- <script src="https://jakubroztocil.github.io/rrule/dist/es5/rrule.min.js"></script> -->
-
-
+      
       <title>About Me</title>
       <style>
-
+      
         /* Nav Bar */
         ul {
           list-style-type: none;
@@ -98,7 +90,7 @@
           height: auto;
         }
 
-
+    
     .main {
         background-color: #FFFFFF;
         width: 400px;
@@ -107,14 +99,14 @@
         border-radius: 1.5em;
         /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
     }
-
+    
     .sign {
         padding-top: 40px;
         color: rgb(134, 178, 218);
         font-weight: bold;
         font-size: 23px;
     }
-
+    
     .un {
     width: 76%;
     color: rgb(38, 50, 56);
@@ -134,11 +126,11 @@
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-
+    
     form.form1 {
         padding-top: 40px;
     }
-
+    
     .pass {
             width: 76%;
     color: rgb(38, 50, 56);
@@ -158,13 +150,13 @@
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-
-
+    
+   
     .un:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
-
+        
     }
-
+    
     .submit {
       cursor: pointer;
         border-radius: 5em;
@@ -180,43 +172,42 @@
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
-
+    
     .forgot {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color:rgba(182,221,255,0.75);
         padding-top: 15px;
     }
-
+    
     a {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color:rgba(182,221,255,0.75);
         text-decoration: none
     }
+    
 
-
-
+                
       </style>
-
-<ul>
-  <li><a class="active" href="happyHome.html">Home</a></li>
-  <li><a href="#">About Us</a></li>
-  <li><a href="#myModal" data-toggle="modal" onclick="openModal()">Login</a></li>
-  <li><a href="#myModal2"  data-toggle="modal" onclick="openModal()">Sign Up</a></li>
-</ul>
+      
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up!</a></li>
+      </ul>
 
     </head>
     <body style="font-family: century gothic; font-size: 11;">
-      <div class = "content" id = "eventCreated"></div>
     <!-- Interest -->
       <h1>Add New Habit</h1>
-    <div class="form-group addeventatc" style="margin-left: 10%; margin-right: 10%;">
+    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
         <div class="form-group">
             <label for="Name">Habit Name:</label>
-            <input type="name" class="form-control title" id="name" placeholder="ie. Drinking Water">
+            <input type="name" class="form-control" id="name" placeholder="ie. Drinking Water">
         </div>
         <div class="form-group">
             <label for="comment">Notes about habit:</label>
-            <textarea class="form-control description" rows="5" id="comment"></textarea>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
             <div class="form-group">
                 <label for="Name"> Date Start:</label>
                 <input type="date" class="form-control" id="start" placeholder="ie. 01/01/2020">
@@ -234,95 +225,71 @@
               <input type="time" class="form-control" id="timeEnd" placeholder="ie. 01/01/2020">
             </div>
 
-            <div class="container" id = "dayOWeek">
+            <div class="container">
               <label>Which days of the week do you want to make sure you keep this habit?</label>
               <form>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="SU"> Sun
+                  <input type="checkbox" value="", id ="Sunday"> Sun
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="MO"> Mon
+                  <input type="checkbox" value="", id ="Monday"> Mon
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="TU"> Tues
+                  <input type="checkbox" value="", id ="Tuesday"> Tues
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="WE"> Wed
+                  <input type="checkbox" value="", id ="Wednesday"> Wed
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="TH"> Thur
+                  <input type="checkbox" value="", id ="Thursday"> Thur
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="FR"> Fri
+                  <input type="checkbox" value="", id ="Friday"> Fri
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="SA"> Sat
+                  <input type="checkbox" value="", id ="Saturday"> Sat
                 </label>
               </form>
             </div>
           </div>
 
-            <!-- <div class="row">
-                <a type="button" class="submit" id = "eventSubmit" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
+            <div class="row">
+                <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
             </div>
-     </div> -->
-
-         <!-- SUBMIT BUTTON  -->
-
-  <div class="row">
-    <a type="button" class="submit" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
-</div>
-
-  <!-- HTML CODE FOR LOGIN -->
-
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-login">
-      <div class="modal-content">
-        <div class="main">
-          <p class="sign" align="center">Login</p>
-          <form class="form1">
-            <input class="un " type="text" align="center" placeholder="Username">
-            <input class="pass" type="password" align="center" placeholder="Password">
-            <a class="submit" type = "button" href = "#" onClick="onClickFunction()" align="center">Sign in</a>
-            <p class="forgot" align="center"><a href="#">Forgot Password?</p>        
-          </div>
-      </div>
-    </div>
-  </div>
-  <br /><br /><br />
-
-  <!-- HTML CODE FOR SIGN IN -->
-
-  <div id="myModal2" class="modal fade">
-    <div class="modal-dialog modal-login">
-      <div class="modal-content">
-        <p class="sign" align="center">Sign Up</p>
-        <div class="modal-body">
-            <input type="text" id="name" class="un" name="firstName" placeholder="First Name"
-              required=/"required">
-            <input type="text" id="lastName"class="un" name="lastName" placeholder="Last Name"
-              required="required">
-            <input type="email" id="email" class="un" name="E-Mail" placeholder="E-Mail"
-              required="required">
-            <input id="psw" id="pass" type="password" class="pass" name="password" placeholder="Password"
-              required="required">
-            <input id="cpsw" id="pass"type="password" class="pass" name="confirm password"
-              placeholder="Confirm Password" required="required">
-            <button id="my_submit_button" class="submit" 
-              onClick="onClickFunction()">Sign Up</button>
+    
+    
+          <div>
+         <br>
+          <label>Log in to save your changes:</label>
         </div>
-      </div>
-    </div>
-  </div>
-  <br /><br /><br />
+        </div>
+          <div class="main">
+            <p class="sign" align="center">Sign in</p>
+            <form class="form1">
+              <input class="un " type="text" align="center" placeholder="Username">
+              <input class="pass" type="password" align="center" placeholder="Password">
+              <a class="submit" align="center">Sign in</a>
+              <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+                    
+                        
+            </div>
+           
 
+          </div>
+          
+          <script>
+          // Add the following code if you want the name of the file appear on select
+          $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+          });
+          </script>
 
-     <script src = index.js></script>
-     <script async defer src="https://apis.google.com/js/api.js"
-             onload="this.onload=function(){};handleClientLoad()"
-             onreadystatechange="if (this.readyState === 'complete') this.onload()">
-     </script>
+          
+          
+     </div>
 
+    
     </body>
 
     </html>
