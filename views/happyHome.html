@@ -14,8 +14,8 @@
 
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      
-      
+
+
       <title>Happy Home</title>
 
       <script>
@@ -116,31 +116,30 @@
           height: auto;
         }
 
-                
+
       </style>
-      
+
       <ul>
-        <li><a class="active" href="happyHome.ejs">Home</a></li>
+        <li><a class="active" href="happyHome.html">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="#">Sign Up!</a></li>
       </ul>
     </head>
       <body style="font-family: century gothic; font-size: 11;">
         <div class="center">
-        <img id="logo-main" src="happyHabits.JPG" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">            
+        <img id="logo-main" src="views/img/happyHabits.JPG" width="450" height= "270" alt="Logo Thing main logo" class="center" style="margin-top: 25px;">
+
           <h3> <center>&#9720;Menu: &#9721; </center></h3>
 
           <div class="row">
-         <!-- <a type="button" class="btn btn-info" href="form.html" style="margin-bottom: 2mm;">Add New Interest</a>
-            </div> -->
-         <!-- <a type="button" class="btn btn-info" href="https://github.com/kevinawongw" style=margin-left:25px;>See Cakes</a> -->
-		<% console.log(data); %>
+
+
             <div class="container-fluid">
               <div class="row" style="margin-left: 20px;">
                 <div class="card-deck">
                   <div class="card" id = "Interest_1">
-                    <img class="card-img-top" src="checkin.JPG" alt="Cake">
+                    <img class="card-img-top" src="views/img/checkin.JPG" alt="Cake">
                     <div class="card-block">
                       <h4 class="card-title">Daily Check In: </h4>
                       <p class="card-text">Check in with the app with details of your habits for the day!</p>
@@ -150,7 +149,7 @@
                     </div>
                   </div>
                   <div class="card" id = "Interest_2">
-                    <img class="card-img-top" src="calendar.JPG" alt="Isabelle">
+                    <img class="card-img-top" src="views/img/calendar.JPG" alt="Isabelle">
                     <div class="card-block">
                       <h4 class="card-title">Calendar View: </h4>
                       <p class="card-text">Check out the calendar to see how you've been doing wih your habits everyday!</p>
@@ -160,12 +159,12 @@
                     </div>
                   </div>
                   <div class="card" id = "Interest_3">
-                    <img class="card-img-top" src="custom.JPG" alt="Journal">
+                    <img class="card-img-top" src="views/img/custom.JPG" alt="Journal">
                     <div class="card-block">
                       <h4 class="card-title">Customize Habits: </h4>
                       <p class="card-text">Write your own custom habits to keep track of the ones that are specific to you!</p>
                       <div>
-                        <a type="button" class="btn btn-info" style="margin-left:55px; margin-bottom: 10px;" href="form.html">Add/Customize</a>
+                        <a type="button" class="btn btn-info" style="margin-left:55px; margin-bottom: 10px;" onclick="#">Add/Customize</a>
                       </div>
                     </div>
                   </div>
@@ -175,6 +174,6 @@
                       <div class="panel-heading"> <center>&#9720;Welcome to Happy Habits:&#9721; </center></div>
                       <div class="panel-body">This is an app that is aimed to help individuals build good habits and release bad habits. Use this app as a tracker to keep track of day-to-day progress on personal habits. If you want to see how you have grown, check out your monthly progress in the calendar app. Not everyone has the same habits. Add your own custom habits to make sure the app is personalized for you.</div>
                     </div>
-      
+
       	</body>
     </html>

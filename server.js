@@ -10,6 +10,7 @@ var app = express();
 var bodyParser = require('body-parser'); //Ensure our body-parser tool has been added
 app.use(bodyParser.json());              // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+var path = require('path');
 
 //Create Database Connection
 var pgp = require('pg-promise')();
@@ -37,29 +38,84 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
 
-// login page
 app.get('/home', function(req, res) {
-	console.log(__dirname + '/');
-	res.render('happyHome',{
-		my_title:"Login Page"
-	});
+	res.sendFile(path.join(__dirname + '/views/happyHome.html'));
 });
 
-app.get('/test', function(req, res) {
+app.get('/view', function(req, res) {
 	var query = 'select * from users;';
 	db.any(query)
         .then(function (rows) {
-            res.render('happyHome',{
-				my_title: "Home Page",
-				data: rows,
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: null,
 			})
 
         })
         .catch(function (err) {
             // display error message in case an error
             console.log('error', err);
-            response.render('happyHome', {
-                title: 'Home Page',
+            response.render('Habit_View', {
+                title: 'Habit_View',
+                data: '',
+                
+            })
+        })
+
+});
+
+app.get('/view/checkin', function(req, res) {
+	var email = req.query.email;
+	console.log(email);
+	var password = req.query.password;
+	console.log(password);
+	var query = "select name, streak from habits where id = (select id from users where email = '" + email + "' and password = '" + password + "');";
+	console.log(query);
+	db.any(query)
+        .then(function (rows) {
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: rows,
+			})
+
+        })
+        .catch(function (err) {
+            // display error message in case an error
+            console.log('error', err);
+            response.render('Habit_View', {
+                title: 'Habit_View',
+                data: '',
+                
+            })
+        })
+
+});
+
+app.post('/view/checkin', function(req, res) {
+	var Email = req.body.Email;
+	console.log(Email);
+	var Password = req.body.Password;
+	console.log(Password); 
+	var insert = "INSERT INTO users(email, password) VALUES('" + Email + "','" + Password + "');";
+	var query = "select name, streak from habits where id = (select id from users where email = '" + Email + "' and password = '" + Password + "');";
+	db.task('get-everything', task => {
+	  return task.batch([
+		task.any(insert),
+		task.any(query)
+	  ]);
+	})
+        .then(info => {
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: info[1],
+			})
+
+        })
+        .catch(function (err) {
+            // display error message in case an error
+            console.log('error', err);
+            response.render('Habit_View', {
+                title: 'Habit_View',
                 data: '',
                 
             })
