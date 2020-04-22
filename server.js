@@ -49,33 +49,7 @@ app.get('/view', function(req, res) {
             res.render('Habit_View',{
 		my_title: "Habit_View",
 		data: null,
-			})
-
-        })
-        .catch(function (err) {
-            // display error message in case an error
-            console.log('error', err);
-            response.render('Habit_View', {
-                title: 'Habit_View',
-                data: '',
-                
-            })
-        })
-
-});
-
-app.get('/view/checkin', function(req, res) {
-	var email = req.query.email;
-	console.log(email);
-	var password = req.query.password;
-	console.log(password);
-	var query = "select name, streak from habits where id = (select id from users where email = '" + email + "' and password = '" + password + "');";
-	console.log(query);
-	db.any(query)
-        .then(function (rows) {
-            res.render('Habit_View',{
-		my_title: "Habit_View",
-		data: rows,
+		user: null,
 			})
 
         })
@@ -92,15 +66,15 @@ app.get('/view/checkin', function(req, res) {
 });
 
 app.post('/view/checkin', function(req, res) {
-	var Email = req.body.Email;
-	console.log(Email);
-	var Password = req.body.Password;
-	console.log(Password); 
-	var insert = "INSERT INTO users(email, password) VALUES('" + Email + "','" + Password + "');";
-	var query = "select name, streak from habits where id = (select id from users where email = '" + Email + "' and password = '" + Password + "');";
+	var email = req.body.email;
+	
+	var password = req.body.password;
+	
+	var query = "select id, name, streak from habits where id = (select id from users where email = '" + email + "' and password = '" + password + "');";
+	var users = "(select * from users where email = '" + email + "' and password = '" + password + "');";
 	db.task('get-everything', task => {
 	  return task.batch([
-		task.any(insert),
+		task.any(users),
 		task.any(query)
 	  ]);
 	})
@@ -108,6 +82,7 @@ app.post('/view/checkin', function(req, res) {
             res.render('Habit_View',{
 		my_title: "Habit_View",
 		data: info[1],
+		user: info[0],
 			})
 
         })
@@ -123,9 +98,108 @@ app.post('/view/checkin', function(req, res) {
 
 });
 
+app.post('/view/signup', function(req, res) {
+	var Email = req.body.Email;
+	
+	var Password = req.body.Password;
+	var name = req.body.firstName;
+	var insert = "INSERT INTO users(email, password, name) VALUES('" + Email + "','" + Password + "','"+name+"');";
+	var query = "select id, name, streak from habits where id = (select id from users where email = '" + Email + "' and password = '" + Password + "');";
+	var users = "(select * from users where email = '" + Email + "' and password = '" + Password + "');";
+	db.task('get-everything', task => {
+	  return task.batch([
+		task.any(insert),
+		task.any(query),
+		task.any(users),
+	  ]);
+	})
+        .then(info => {
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: info[1],
+		user: info[2],
+			})
 
+        })
+        .catch(function (err) {
+            // display error message in case an error
+            console.log('error', err);
+            response.render('Habit_View', {
+                title: 'Habit_View',
+                data: '',
+                
+            })
+        })
 
+});
 
+app.post('/view/update', function(req, res) {
+	var item = Number(req.body.habit);
+	var name = req.body.item_name;
+	var item_id = req.body.item_id;
+	var streak = item + 1;
+	var update = "UPDATE habits SET streak = " + streak + "WHERE name = '"+ name +"';";
+	var query = "SELECT id, name, streak FROM habits WHERE id = " + item_id + ";"
+	var users = "SELECT * FROM users WHERE id = " + item_id + ";";
+	db.task('get-everything', task => {
+	  return task.batch([
+		task.any(update),
+		task.any(query),
+		task.any(users),
+	  ]);
+	})
+        .then(info => {
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: info[1],
+		user: info[2],
+			})
+
+        })
+        .catch(function (err) {
+            // display error message in case an error
+            console.log('error', err);
+            response.render('Habit_View', {
+                title: 'Habit_View',
+                data: '',
+                
+            })
+        })
+
+});
+
+app.post('/view/addHabit', function(req, res) {
+	var name = req.body.itemName;
+	var item_id = req.body.Id;
+	var update = "INSERT INTO habits(id, name,streak) VALUES("+item_id+",'"+name+"', 1);";
+	var query = "SELECT id, name, streak FROM habits WHERE id = " + item_id + ";"
+	var users = "SELECT * FROM users WHERE id = " + item_id + ";";
+	db.task('get-everything', task => {
+	  return task.batch([
+		task.any(update),
+		task.any(query),
+		task.any(users),
+	  ]);
+	})
+        .then(info => {
+            res.render('Habit_View',{
+		my_title: "Habit_View",
+		data: info[1],
+		user: info[2],
+			})
+
+        })
+        .catch(function (err) {
+            // display error message in case an error
+            console.log('error', err);
+            response.render('Habit_View', {
+                title: 'Habit_View',
+                data: '',
+                
+            })
+        })
+
+});
 
 
 
