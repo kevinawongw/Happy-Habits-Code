@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+  <html>
+    <head	>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://		maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+      <title>Happy Home</title>
+
+      <script>
+        function deleteA(divID){
+          console.log("Hi");
+          document.getElementById(divID).remove();
+        }
+        function addCard(){
+          var A = Math.random().toString(36).substring(2,10);
+          var tweet1 = $('<div class="card" id="'+A+'" style="margin-bottom:5px; height: 50px"> <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteA("'+A+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet1.appendTo(document.getElementById("Interest_1"));
+        }
+        function addCard2(){
+          var B = Math.random().toString(36).substring(2,10);
+          var tweet2 = $('<div class="card" id="'+B+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+B+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet2.appendTo(document.getElementById("Interest_2"));
+        }
+        function deleteB(divID){
+          document.getElementById(divID).remove();
+        }
+        function addCard3(){
+          var C = Math.random().toString(36).substring(2,10);
+          var tweet3 = $('<div class="card" id="'+C+'" style="margin-bottom:5px; height: 50px" > <div style="position: absolute; top: 0; right: 0;"><a type="button" class="btn btn-info" onclick=deleteB("'+C+'") >x</a> </div>  <img class="card-img-top" style = "margin-top:15px;" src="twitter.png" alt="twitter"> <h4 align = "right" font size = "6" style ="margin-right:5px;"> <strong>Tweet</strong></h4><p align ="right" style ="margin-right:5px;" >Sample Tweet will go here!</p> </div>');
+          tweet3.appendTo(document.getElementById("Interest_3"));
+        }
+
+      </script>
+
+
+      <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color:rgba(182,221,255,0.75);
+          position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 0;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color:rgba(182,221,255,0.75);
+        }
+
+        .active {
+          background-color: rgba(182,221,255,0.75);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          /* width: 50%; */
+        }
+
+        .btn-info{
+          font-family: Raleway-SemiBold;
+          font-size: 13px;
+          color: rgba(182,221,255,0.75);
+          letter-spacing: 1px;
+          line-height: 15px;
+          border: 2px solid rgba(182,221,255,0.75);
+          border-radius: 40px;
+          background: transparent;
+          transition: all 0.3s ease 0s;
+        }
+
+        .btn-info:hover {
+          color: #FFF;
+          background: rgba(182,221,255,0.75);
+          border: 2px solid rgba(182,221,255,0.75);
+        }
+
+        .card-text{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .card-title{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .responsive {
+          width: 100%;
+          height: auto;
+        }
+
+
+      </style>
+
+      <ul>
+        <li><a class="active" href="happyHome.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#">Sign Up!</a></li>
+      </ul>
+    </head>
+    <div class="container">
+      <body class="center text-center">
+        <form class="form-signin">
+           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+           <label for="inputEmail" class="sr-only">Email address</label>
+           <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+           <label for="inputPassword" class="sr-only">Password</label>
+           <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+           <div class="checkbox mb-3">
+           <label>
+           </label>
+           </div>
+           <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+           <a class="btn btn-lg btn-primary" href="register.html">Register</a>
+           <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+       </form>
+      </body>
+    </div>
+    </html>
