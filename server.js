@@ -44,7 +44,9 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/views/happyHome.html'));
 });
 
-
+app.get('/AboutUs', function(req, res) {
+	res.sendFile(path.join(__dirname + '/views/AboutUs.html'));
+});
 
 app.get('/form', function(req, res) {
 	res.sendFile(path.join(__dirname + '/views/form.html'));
