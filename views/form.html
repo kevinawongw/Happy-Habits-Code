@@ -14,11 +14,136 @@
 
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      
-      
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- <script src="https://jakubroztocil.github.io/rrule/dist/es5/rrule.min.js"></script> -->
+
+      <script> var CLIENT_ID = '526363734659-k1270fmj90pg4umqv9vcch429eashatf.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyD0pf6-tphmh767IotONYynnD72OyqGV0Q';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/calendar.events";
+
+var submitButton = document.getElementById('eventSubmit');
+var authStatus = false;
+
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+function handleClientLoad() {
+  gapi.load('client:auth2', initClient);
+}
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+  gapi.client.init({
+    apiKey: API_KEY,
+    clientId: CLIENT_ID,
+    discoveryDocs: DISCOVERY_DOCS,
+    scope: SCOPES
+  }).then(function () {
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    submitButton.onclick = handleClick;
+  }, function(error) {
+    appendPre(JSON.stringify(error, null, 2));
+  });
+}
+
+
+/**
+ *  Sign in the user upon button click.
+ */
+ function handleClick() {
+   if(authStatus == false){
+     gapi.auth2.getAuthInstance().signIn();
+   }
+  newEvent();
+}
+
+function updateSigninStatus(authStatus){
+  this.authStatus = authStatus;
+}
+function appendPre(message) {
+  var pre = document.getElementById('eventCreated');
+  var textContent = document.createTextNode(message + '\n');
+  pre.appendChild(textContent);
+}
+function newEvent(){
+
+  var frequency = "";
+  $('#dayOWeek').find('input').each(function () {
+    if(this.checked == true){
+      frequency += "" + this.id + ",";
+    }
+  })
+
+  frequency = frequency.substring(0, frequency.length - 1);
+
+  const dateTime = function(date, time){
+    var dt = new Date(Date.parse(date + " " + time));
+    return dt.toISOString();
+  }
+
+  const untilTime = function(date){
+    var ut = new Date(Date.parse(date));
+    var st = "";
+    st += ut.getFullYear();
+    if((ut.getMonth()+1) < 10){
+      st+="0";
+    }
+    st+=(ut.getMonth()+1);
+    if((ut.getDate()+1) < 10){
+      st+="0";
+    }
+    st+=(ut.getDate()+1);
+    console.log(st);
+    return st;
+  }
+
+
+  var event = {
+    "summary": $('#name').val(),
+  "description": $('#comment').val(),
+    "colorId": 1,
+    "start": {
+      "dateTime": dateTime($('#start').val(), $('#timeStart').val()),
+      "timeZone": 'America/Denver',
+    },
+    "end": {
+      "dateTime": dateTime($('#start').val(), $('#timeEnd').val()),
+      "timeZone": 'America/Denver',
+    },
+    "recurrence": [
+      "RRULE:FREQ=WEEKLY;BYDAY="+ frequency +";UNTIL="+ untilTime($('#end').val())
+    ],
+  }
+
+  var request = gapi.client.calendar.events.insert({
+    'calendarId': 'primary',
+    'resource': event
+  });
+
+  request.execute(function(completeEvent) {
+    appendPre('Event created: ' + completeEvent.htmlLink);
+  });
+}
+</script>
       <title>About Me</title>
       <style>
-      
+
         /* Nav Bar */
         ul {
           list-style-type: none;
@@ -90,7 +215,7 @@
           height: auto;
         }
 
-    
+
     .main {
         background-color: #FFFFFF;
         width: 400px;
@@ -99,14 +224,14 @@
         border-radius: 1.5em;
         /* box-shadow: 0px 11px 25px 2px rgba(0, 0, 0, 0.14); */
     }
-    
+
     .sign {
         padding-top: 40px;
         color: rgb(134, 178, 218);
         font-weight: bold;
         font-size: 23px;
     }
-    
+
     .un {
     width: 76%;
     color: rgb(38, 50, 56);
@@ -126,11 +251,11 @@
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-    
+
     form.form1 {
         padding-top: 40px;
     }
-    
+
     .pass {
             width: 76%;
     color: rgb(38, 50, 56);
@@ -150,13 +275,13 @@
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
     }
-    
-   
+
+
     .un:focus, .pass:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
+
     }
-    
+
     .submit {
       cursor: pointer;
         border-radius: 5em;
@@ -172,23 +297,23 @@
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
-    
+
     .forgot {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color:rgba(182,221,255,0.75);
         padding-top: 15px;
     }
-    
+
     a {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color:rgba(182,221,255,0.75);
         text-decoration: none
     }
-    
 
-                
+
+
       </style>
-      
+
       <ul>
         <li><a class="active" href="happyHome.html">Home</a></li>
         <li><a href="#">About Us</a></li>
@@ -198,16 +323,17 @@
 
     </head>
     <body style="font-family: century gothic; font-size: 11;">
+      <div class = "content" id = "eventCreated"></div>
     <!-- Interest -->
       <h1>Add New Habit</h1>
-    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+    <div class="form-group addeventatc" style="margin-left: 10%; margin-right: 10%;">
         <div class="form-group">
             <label for="Name">Habit Name:</label>
-            <input type="name" class="form-control" id="name" placeholder="ie. Drinking Water">
+            <input type="name" class="form-control title" id="name" placeholder="ie. Drinking Water">
         </div>
         <div class="form-group">
             <label for="comment">Notes about habit:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
+            <textarea class="form-control description" rows="5" id="comment"></textarea>
             <div class="form-group">
                 <label for="Name"> Date Start:</label>
                 <input type="date" class="form-control" id="start" placeholder="ie. 01/01/2020">
@@ -225,39 +351,39 @@
               <input type="time" class="form-control" id="timeEnd" placeholder="ie. 01/01/2020">
             </div>
 
-            <div class="container">
+            <div class="container" id = "dayOWeek">
               <label>Which days of the week do you want to make sure you keep this habit?</label>
               <form>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Sunday"> Sun
+                  <input type="checkbox" value="", id ="SU"> Sun
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Monday"> Mon
+                  <input type="checkbox" value="", id ="MO"> Mon
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Tuesday"> Tues
+                  <input type="checkbox" value="", id ="TU"> Tues
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Wednesday"> Wed
+                  <input type="checkbox" value="", id ="WE"> Wed
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Thursday"> Thur
+                  <input type="checkbox" value="", id ="TH"> Thur
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Friday"> Fri
+                  <input type="checkbox" value="", id ="FR"> Fri
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="", id ="Saturday"> Sat
+                  <input type="checkbox" value="", id ="SA"> Sat
                 </label>
               </form>
             </div>
           </div>
 
             <div class="row">
-                <a type="button" class="btn btn-info" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
+                <a type="button" class="btn btn-info" id = "eventSubmit" href="#" style="margin-bottom: 2mm; color: rgb(134, 178, 218)">Submit</a>
             </div>
-    
-    
+
+
           <div>
          <br>
           <label>Log in to save your changes:</label>
@@ -270,13 +396,13 @@
               <input class="pass" type="password" align="center" placeholder="Password">
               <a class="submit" align="center">Sign in</a>
               <p class="forgot" align="center"><a href="#">Forgot Password?</p>
-                    
-                        
+
+
             </div>
-           
+
 
           </div>
-          
+
           <script>
           // Add the following code if you want the name of the file appear on select
           $(".custom-file-input").on("change", function() {
@@ -285,11 +411,16 @@
           });
           </script>
 
-          
-          
+
+
      </div>
 
-    
+     
+     <script async defer src="https://apis.google.com/js/api.js"
+             onload="this.onload=function(){};handleClientLoad()"
+             onreadystatechange="if (this.readyState === 'complete') this.onload()">
+     </script>
+
     </body>
 
     </html>

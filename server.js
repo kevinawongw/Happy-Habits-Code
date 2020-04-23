@@ -23,13 +23,15 @@ var pgp = require('pg-promise')();
   user: This should be left as postgres, the default user account created when PostgreSQL was installed
   password: This the password for accessing the database.  You'll need to set a password USING THE PSQL TERMINAL THIS IS NOT A PASSWORD FOR POSTGRES USER ACCOUNT IN LINUX!
 **********************/
-const dbConfig = {
+/*const dbConfig = {
 	host: 'localhost',
 	port: 5432,
 	database: 'happy_habits',
 	user: 'postgres',
 	password: 'Shadowclaw3!'
-};
+};*/
+
+const dbConfig = process.env.DATABASE_URL;
 
 var db = pgp(dbConfig);
 
@@ -38,8 +40,20 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
 
-app.get('/home', function(req, res) {
+app.get('/view/home', function(req, res) {
 	res.sendFile(path.join(__dirname + '/views/happyHome.html'));
+});
+
+app.get('/view/calendar', function(req, res) {
+	res.sendFile(path.join(__dirname + '/views/index.html'));
+});
+
+app.get('/view/form', function(req, res) {
+	res.sendFile(path.join(__dirname + '/views/form.html'));
+});
+
+app.get('/index.js', function(req, res) {
+	res.sendFile(path.join(__dirname + '/views/index.js'));
 });
 
 app.get('/view', function(req, res) {
@@ -202,6 +216,6 @@ app.post('/view/addHabit', function(req, res) {
 });
 
 
+//app.listen(8000);
+app.listen(process.env.PORT);
 
-app.listen(8000);
-console.log('8000 is the magic port');
