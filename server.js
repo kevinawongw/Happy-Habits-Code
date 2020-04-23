@@ -44,17 +44,13 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/views/happyHome.html'));
 });
 
-app.get('/view/calendar', function(req, res) {
-	res.sendFile(path.join(__dirname + '/views/index.html'));
-});
 
-app.get('/view/form', function(req, res) {
+
+app.get('/form', function(req, res) {
 	res.sendFile(path.join(__dirname + '/views/form.html'));
 });
 
-app.get('/index.js', function(req, res) {
-	res.sendFile(path.join(__dirname + '/views/index.js'));
-});
+
 
 app.get('/view', function(req, res) {
 	var query = 'select * from users;';
